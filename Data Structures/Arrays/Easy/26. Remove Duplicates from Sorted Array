@@ -1,0 +1,19 @@
+26. Remove Duplicates from Sorted Array
+********************************************************
+
+class Solution {
+    public int removeDuplicates(int[] nums) {
+        if(nums.length<=1)
+            return nums.length;
+        
+        int resIdx =0,currIdx=1;
+        while(currIdx<nums.length){
+            if(nums[resIdx]!=nums[currIdx]){
+                resIdx++;
+                nums[resIdx]=nums[currIdx];
+            }
+            currIdx++;
+        }
+        return resIdx+1;
+    }
+}
