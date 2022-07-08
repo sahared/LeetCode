@@ -1,0 +1,12 @@
+2114. Maximum Number of Words Found in Sentences
+*****************************************************************
+
+class Solution {
+    public int mostWordsFound(String[] sentences) {
+        int m=0;
+        for(int i=0; i<sentences.length; i++) {
+            m = Math.max(m,(sentences[i].split(" ")).length);
+        }
+        return m;
+    }
+}
