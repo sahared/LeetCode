@@ -1,0 +1,17 @@
+1491. Average Salary Excluding the Minimum and Maximum Salary
+*************************************************************************
+
+
+class Solution {
+    public double average(int[] salary) {
+        Arrays.sort(salary);
+        double sum=0;
+        double result = 0;
+        for(int i=1; i<=(salary.length)-2 ; i++)
+        {
+            sum+= salary[i];
+            result = sum/((salary.length)-2);
+        }
+        return result;
+    }
+}
