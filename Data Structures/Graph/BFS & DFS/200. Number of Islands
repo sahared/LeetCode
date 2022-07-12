@@ -1,28 +1,27 @@
 200. Number of Islands
 *************************
 
-class Solution{
-public int numsIslands(char[][] grid){
-int res =0; 
-for(int i=0; i<grid.length; i++){
-for(int j=0; j<grid[0].length; j++){
-res+= dfs(grid, i, j);
-}
-}
-returb res;
-}
-
-private int dfs(char[][] A, int i, int j){
-int m=A.length, n=A[0].length;
-
-if(i<0 || j<0 || i==m || j==n || A[i][j] == '0'){
-return 0;
-}
-A[i][j]='0';
-dfs(A, i, j-1);
+class Solution {
+    public int numIslands(char[][] grid) {
+        int res=0;
+            for(int i=0; i<grid.length; i++){
+                for(int j=0; j<grid[0].length; j++){
+                    res+= dfs(grid, i, j);
+                }
+            }
+            return res;
+        }
+    private int dfs(char[][] A, int i, int j){
+        int m = A.length, n=A[0].length;
+        
+        if(i<0 || j<0 || i==m || j==n || A[i][j]== '0'){
+            return 0;
+        }
+        A[i][j]= '0';
+        dfs(A, i, j-1);
         dfs(A, i, j+1);
         dfs(A, i-1, j);
         dfs(A, i+1, j);
         return 1;
-        }
-        }
+    }
+}
